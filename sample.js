@@ -125,3 +125,57 @@
 
 
 
+ class ArrayStack {
+    constructor() {
+        this.arr = []
+    }
+
+   push(value) {
+     
+      this.arr.push(value)
+
+   }
+
+   pop() {
+       if(this.isEmpty()) return 'stack is empty'
+       return this.arr.pop()
+   }
+
+   peek() {
+    if(this.isEmpty()) return  'stack is empty'
+     return this.arr[this.arr.length-1]
+   }
+
+   
+
+   isEmpty() {
+      return this.arr.length === 0
+   }
+
+   size(){
+    return this.arr.length
+   }
+
+
+   
+
+ }
+
+
+ function reverseAstring(str) {
+    let stack1 = new ArrayStack()
+    let reversedString = ''
+
+    for(let l of str) {
+       stack1.push(l)
+    }
+
+    while(stack1.arr.length!==0) {
+        reversedString += stack1.pop()
+    }
+
+
+    return reversedString
+ }
+
+console.log( reverseAstring('hello world'));
