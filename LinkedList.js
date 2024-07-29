@@ -57,7 +57,7 @@ class LinkedList {
         let current = this.head
 
         while(current.next!==null && current.next.data !==value){
-            current = current.next
+            current = current.next.next
         }  
 
     }
